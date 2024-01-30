@@ -1,0 +1,24 @@
+{
+  "title": "ローカルにjupyterlab",
+  "closed": false,
+  "archived": false,
+  "created_at": "2021-10-06",
+  "comments": [
+    {
+      "author": "xianglishan",
+      "created_at": "2021-10-06",
+      "body_markdown": "localのwindowsにjupyterというかpythonの環境作る方法はたぶんたくさんあって、\n- anaconda\n- 仮想しないでpythonいれてpip install jupyterlabとかする\n- docker desktop etc..\nな感じだから以下は参考になりそうなurlおいておく\n\nhttps://qiita.com/hgaiji/items/edf71435d0565257f980\n\nhttps://qiita.com/SolKul/items/32443fb4452f7194bb8c\n\nhttps://qiita.com/kshigeru/items/ea174d6bcacc474f2a51\n",
+      "body_updated_at": "2021-10-06"
+    },
+    {
+      "author": "xianglishan",
+      "created_at": "2021-10-06",
+      "body_markdown": "私用のPCがwindows10homeなのでDocker desktopいれて、jupyter/datascience-notebookをプルして使うことにする。そのうちdocker-compose+dockerfileで僕が考えた最強の環境を布教できるようにしたい。\n\n(追記予定)"
+    },
+    {
+      "author": "xianglishan",
+      "created_at": "2021-10-25",
+      "body_markdown": "以下の２種類やってみた\n- docker desktop + wsl + chrome でjupyter & mysql これは以下の記事に書いてみた\n\nhttps://zenn.dev/xianglishan/articles/498bd09e04520f\n\n- docker desktop + wsl + vscode remote container でjupyter これが面白くて今はこれで勉強中\n  - これはそのうちアウトプットする"
+    }
+  ]
+}

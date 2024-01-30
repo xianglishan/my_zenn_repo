@@ -1,0 +1,20 @@
+{
+  "title": "awsさわってやってみたことまとめ",
+  "closed": false,
+  "archived": false,
+  "created_at": "2021-10-02",
+  "comments": [
+    {
+      "author": "xianglishan",
+      "created_at": "2021-10-02",
+      "body_markdown": "以下を参照してEC2の動的なパブリックIPアドレスを仮想マシン起動時に静的なドメインにroute53使って登録\nドメインはお名前ドットコムで用意した。\n➡️IPはstop/startで変わるけどいつものドメインでいつでもsshとかhttpとかできる\nhttps://dev.classmethod.jp/articles/route53-record-ip-change-by-aws-cli/\n\n以下自分のシェルスクリプトのコード\n```bash:/home/ubuntu/route/iproute.sh\n#!/bin/bash\n\nDOMAIN_NAME=\"{ドメイン名}\"\nSUB_NAME=\"{サブドメイン}\"\nIP_ADDRESS=`curl -s inet-ip.info`\nHOSTED_ZONE_ID=\"該当ホストゾーンID\"\n\nBATCH_JSON='{\n        \"Comment\": \"UPSERT a record \",\n        \"Changes\": [{\n                \"Action\": \"UPSERT\",\n                        \"ResourceRecordSet\": {\n                        \"Name\": \"'${SUB_NAME}'.'${DOMAIN_NAME}'\",\n                        \"Type\": \"A\",\n                        \"TTL\": 300,\n                        \"ResourceRecords\": [{ \"Value\": \"'${IP_ADDRESS}'\"}]\n        }}]\n}'\naws route53 change-resource-record-sets --hosted-zone-id \"${HOSTED_ZONE_ID}\" --change-batch \"${BATCH_JSON}\"\n```\n\n以下はsystemdのためのserviceファイル\n```bash:/etc/systemd/system/example.service\n[Unit]\nDescription=Route53 Set And Timer\nAfter=network-online.target\n\n[Service]\nExecStart=/bin/bash /home/ubuntu/route/iproute.sh\nWorkingDirectory=/home/ubuntu/route\nType=oneshot\nUser=ubuntu\nGroup=ubuntu\n\n[Install]\nWantedBy=multi-user.target\n```",
+      "body_updated_at": "2021-10-02"
+    },
+    {
+      "author": "xianglishan",
+      "created_at": "2021-10-03",
+      "body_markdown": "awscliからなんかする時は公式doc見るようにするけど英語わからんのでとりあえずここにおいとく\n\n- 試しやすいところからってことでEC2の起動停止\n\nhttps://dev.classmethod.jp/articles/awscli-tips-ec2-start-stop/\n\n- jqコマンド初めてみたので\n\nhttps://qiita.com/takeshinoda@github/items/2dec7a72930ec1f658af",
+      "body_updated_at": "2021-10-03"
+    }
+  ]
+}

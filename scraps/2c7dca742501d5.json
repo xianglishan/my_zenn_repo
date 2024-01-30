@@ -1,0 +1,29 @@
+{
+  "title": "データサイエンスの人になるための勉強(資格試験とかも含む)やることやったこと",
+  "closed": false,
+  "archived": false,
+  "created_at": "2021-10-05",
+  "comments": [
+    {
+      "author": "xianglishan",
+      "created_at": "2021-10-05",
+      "body_markdown": "#### やること\n-  パソコン初心者なので基本情報(応用情報までやるかも)\n- 数学初心者なので統計検定(準１級くらいから)\n- G検定/E資格\n- あとはpythonどうしよっかな\n- Kaggleまずさわってみる",
+      "body_updated_at": "2021-10-05"
+    },
+    {
+      "author": "xianglishan",
+      "created_at": "2021-10-05",
+      "body_markdown": "やったこと\n- java/node/pythonの基礎中の基礎触れたくらい"
+    },
+    {
+      "author": "xianglishan",
+      "created_at": "2021-10-05",
+      "body_markdown": "あとは個人的興味\n- AWS/Azureいろいろやってみる"
+    },
+    {
+      "author": "xianglishan",
+      "created_at": "2021-10-05",
+      "body_markdown": "今近々で勉強中\n- 基本情報\n- G検定"
+    }
+  ]
+}
